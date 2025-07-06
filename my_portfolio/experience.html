@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience | Eswar Neeli</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Table styling to fit your dark theme */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: #fff;
+    }
+    th, td {
+      border: 1px solid #ff5e5e;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #ff5e5e;
+      color: #fff;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #2b2b2b;
+    }
+    tbody tr:hover {
+      background-color: #444;
+    }
+    .cert-thumb {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 2px solid #ff5e5e;
+      transition: transform 0.2s;
+    }
+    .cert-thumb:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal styles for certificate preview */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 9999; 
+      padding-top: 60px; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ff5e5e;
+    }
+    .modal-close {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-section">
+    <nav class="navbar">
+      <h1 class="logo">Esw4R</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="22981a05c6.pdf" target="_blank">Resume</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="experience.html" style="color:#ff5e5e; font-weight:bold;">Experience</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="text-content" style="color: white; max-width: 900px;">
+        <h1>Experience</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Certificate</th>
+              <th>Timeline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zscalar</td>
+              <td>
+                <li><a href="1-9-zscalar.pdf" target="_blank">Visit</a></li>
+              </td>
+              <td>june 2024 - september 2024</td>
+            </tr>
+            <tr>
+              <td>Aws</td>
+              <td>
+                <li><a href="2-10-aws.pdf" target="_blank">Visit</a></li>
+            </td>
+              <td>october 2024- december 2024t</td>
+            </tr>
+            <tr>
+              <td>Google</td>
+              <td>
+                <li><a href="3-11-google.pdf" target="_blank">Visit</a></li>
+            </td>
+              <td>january 2025 - march 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modal for full certificate image -->
+  <div id="certModal" class="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Certificate full view" />
+  </div>
+
+  <script>
+    // JavaScript to open modal on thumbnail click
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalClose = document.getElementById('modalClose');
+    const certThumbs = document.querySelectorAll('.cert-thumb');
+
+    certThumbs.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = img.dataset.full;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    modalClose.onclick = function() {
+      modal.style.display = "none";
+      modalImg.src = "";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modalImg.src = "";
+      }
+    }
+  </script>
+</body>
+</html>
