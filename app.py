@@ -1,9 +1,10 @@
 import os
+from flask import Flask, request, render_template, send_from_directory
+from pymongo import MongoClient
 MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 
-from flask import Flask, request, render_template, send_from_directory
-from pymongo import MongoClient
+
 
 app = Flask(__name__)
 
