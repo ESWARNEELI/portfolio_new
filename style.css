@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+table a {
+  color: #fff; /* Light blue, for example */
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f8f8;
+  color: #fff;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('https://img.freepik.com/premium-photo/boy-winter-coat-stands-front-bright-sun-with-red-sun-him_916191-245642.jpg?uid=R194892857&ga=GA1.1.137363705.1748195381&semt=ais_hybrid&w=740');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Adjust blur as needed */
+  z-index: -1;
+}
+.round-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover; /* Optional: crops image to fill circle */
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  align-items: center;
+}
+
+.logo {
+  color: #ff5e5e;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-content {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 40px 60px;
+  margin-top: 0px;
+  flex-wrap: wrap;
+}
+
+
+
+.text-content {
+  max-width: 600px;
+}
+
+.greeting {
+  color: #ff5e5e;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+h1 span {
+  color: #fff;
+  border-right: 2px solid #fff;
+  padding-right: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #fff; }
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 20px 0;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn.primary {
+  background-color: #ff5e5e;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #ff5e5e;
+  color: #ff5e5e;
+}
+
+.image-content img {
+  max-width: 400px;
+  border-radius: 10px;
+}
